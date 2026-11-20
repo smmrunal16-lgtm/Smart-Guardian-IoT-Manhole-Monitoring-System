@@ -39,17 +39,54 @@ Smart Guardian uses an ESP32 controller, gas sensors, environmental monitoring, 
 
 ```
 Smart-Guardian-IoT-Manhole-Monitoring-System/
+├── backend/
+│   └── python/
+│       ├── app.py
+│       └── requirements.txt
+├── clients/
+│   ├── c/sensor_simulator.c
+│   ├── cpp/sensor_publisher.cpp
+│   └── java/SmartGuardianClient.java
+├── database/schema.sql
+├── docs/
+│   ├── ADVANCED_SETUP.md
+│   └── MULTI_LANGUAGE_SETUP.md
 ├── firmware/
 │   ├── SmartGuardian.ino
 │   └── SmartGuardian_Advanced.ino
-├── docs/
-│   └── ADVANCED_SETUP.md
+├── frontend/
+│   ├── app.js
+│   ├── dashboard.php
+│   ├── index.html
+│   └── style.css
 └── README.md
 ```
+
+## Multi-language Software Stack
+
+The repository now includes companion modules in **Python, JavaScript, PHP, HTML, CSS, Java, C, C++ and SQL**:
+
+| Language | Project role |
+|---|---|
+| Python | Flask API and SQLite data service |
+| JavaScript | Live browser dashboard and API polling |
+| PHP | Alternative server-rendered dashboard entry page |
+| HTML | Dashboard page structure |
+| CSS | Responsive dashboard styling |
+| Java | API monitoring client (Java 11+) |
+| C | Sample sensor JSON simulator |
+| C++ | HTTP JSON publisher using libcurl |
+| SQL | Sensor-reading table schema |
+
+These modules form a separate companion software stack. They do not all execute on the ESP32. Start the Python API and follow `docs/MULTI_LANGUAGE_SETUP.md` to run the dashboard and clients.
 
 ## Advanced Version
 
 The advanced firmware adds a local Wi-Fi dashboard, live JSON endpoints, a recent-reading table, CSV log download, buzzer alerts, and a SIM900A SMS command with a cooldown. See `docs/ADVANCED_SETUP.md` for wiring and setup. The advanced sketch uses a Wi-Fi access point named `SmartGuardian` by default; connect to it and open `http://192.168.4.1`.
+
+## Multi-language Setup
+
+See [Multi-language Setup Guide](docs/MULTI_LANGUAGE_SETUP.md) for commands to run the Python API, HTML/JavaScript dashboard, PHP page, Java client, C simulator and C++ publisher.
 
 ## Getting Started
 
