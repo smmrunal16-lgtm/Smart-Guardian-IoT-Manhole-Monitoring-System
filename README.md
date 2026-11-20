@@ -40,9 +40,16 @@ Smart Guardian uses an ESP32 controller, gas sensors, environmental monitoring, 
 ```
 Smart-Guardian-IoT-Manhole-Monitoring-System/
 ├── firmware/
-│   └── SmartGuardian.ino
+│   ├── SmartGuardian.ino
+│   └── SmartGuardian_Advanced.ino
+├── docs/
+│   └── ADVANCED_SETUP.md
 └── README.md
 ```
+
+## Advanced Version
+
+The advanced firmware adds a local Wi-Fi dashboard, live JSON endpoints, a recent-reading table, CSV log download, buzzer alerts, and a SIM900A SMS command with a cooldown. See `docs/ADVANCED_SETUP.md` for wiring and setup. The advanced sketch uses a Wi-Fi access point named `SmartGuardian` by default; connect to it and open `http://192.168.4.1`.
 
 ## Getting Started
 
