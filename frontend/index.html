@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Smart Guardian Dashboard</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="container">
+<header><div><p class="eyebrow">IOT MONITORING PLATFORM</p><h1>Smart Guardian</h1><p class="muted">Sensor readings from your connected ESP32 or test clients</p></div><span id="connection" class="pill">Connecting</span></header>
+<section class="grid">
+<article class="card"><p>MQ136 · H₂S sensor</p><strong id="h2s">--</strong><small>Raw ADC count</small></article>
+<article class="card"><p>MQ6 · CH₄ sensor</p><strong id="ch4">--</strong><small>Raw ADC count</small></article>
+<article class="card"><p>Temperature</p><strong id="temp">--</strong><small>°C</small></article>
+<article class="card"><p>Humidity</p><strong id="humidity">--</strong><small>%</small></article></section>
+<section class="card status-card"><p>Latest demo status</p><h2 id="status">Waiting for readings</h2><p id="timestamp" class="muted">No data received yet</p></section>
+<section class="card"><div class="section-heading"><h2>Recent readings</h2><button id="refresh">Refresh</button></div><div class="table-wrap"><table><thead><tr><th>Time</th><th>Device</th><th>MQ136</th><th>MQ6</th><th>Temp °C</th><th>Humidity %</th><th>Status</th></tr></thead><tbody id="readings"><tr><td colspan="7">No readings yet</td></tr></tbody></table></div></section>
+<p class="warning-note">Safety notice: values are raw sensor readings, not gas concentrations in ppm. This academic prototype is not a certified gas detector and must never be used to authorize confined-space entry.</p>
+</main><script src="app.js"></script></body></html>
